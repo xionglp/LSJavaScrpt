@@ -12,3 +12,17 @@
 
 
 */
+
+foo(123)
+
+function foo(m) {
+  console.log(num)
+  var num = 10;
+  var num2 = 20;
+  console.log("foo")
+}
+
+// 函数调用函数的过程
+function bar() {
+
+}

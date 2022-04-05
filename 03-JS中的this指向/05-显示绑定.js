@@ -17,7 +17,7 @@ function sum(num1, num2, num3) {
 }
 
 sum.call("call", 20, 30, 40)
-sum.apply("apply", [20, 30, 40,])
+sum.apply("apply", [20, 30, 40])
 
 // bind绑定
 var newFoo = foo.bind("bind")

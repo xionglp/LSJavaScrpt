@@ -1,4 +1,5 @@
-Function.prototype.lscall = function(thisArg, ...args) {
+// ...args 剩余参数
+Function.prototype.lsCall = function(thisArg, ...args) {
   var fn = this;
   thisArg = (thisArg !== null || thisArg !== undefined) ? Object(thisArg): window;
 
@@ -19,6 +20,6 @@ function sum(num1, num2) {
 
 // foo.call({name: "xionglp"})
 
-var result = sum.lscall("aaa", 10, 29)
+var result = sum.lsCall("aaa", 10, 29)
 console.log(result)
 // foo.lscall()

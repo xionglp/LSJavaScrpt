@@ -20,10 +20,10 @@ function Person (name) {
 var person1 = new Person('person1')
 var person2 = new Person('person2')
 
-person1.obj.foo1()() 
-person1.obj.foo1.call(person2)()
-person1.obj.foo1().call(person2) 
+person1.obj.foo1()() // 独立函数调用 window
+person1.obj.foo1.call(person2)() // window
+person1.obj.foo1().call(person2) // person2
 
-person1.obj.foo2()() 
-person1.obj.foo2.call(person2)() 
-person1.obj.foo2().call(person2) 
+person1.obj.foo2()() // obj
+person1.obj.foo2.call(person2)()  // person2
+person1.obj.foo2().call(person2) // obj

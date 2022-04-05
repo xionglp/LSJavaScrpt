@@ -9,10 +9,10 @@ var person = {
 
 function sayName() {
   var sss = person.sayName;
-  sss(); 
-  person.sayName(); 
-  (person.sayName)();
-  (b = person.sayName)(); 
+  sss();  // window
+  person.sayName(); // person
+  (person.sayName)(); // person
+  (b = person.sayName)();  // window 间接函数引用
 }
 
 sayName();

@@ -15,8 +15,8 @@ var obj = {
 // 3、set: 设置属性时会执行函数， 默认是undefined
 // 4、get: 获取属性时会执行函数， 默认是undefined
 Object.defineProperty(obj, "address", {
-  enumerable: true,
   configurable: true,
+  enumerable: true,
   set: function(value) {
     bar()
     this._address = value

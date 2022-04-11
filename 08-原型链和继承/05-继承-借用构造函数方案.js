@@ -10,7 +10,7 @@ Person.prototype.eating = function() {
 
 // 子类： 特有的方法和属性
 function Student(name, friends, sno) {
-  Person.call(this, name, friends);
+  Person.call(this, name, friends); // call的调用方式将属性传递到父类
   this.sno = sno
 }
 

@@ -22,7 +22,9 @@ Student.prototype.studying = function() {
 var stu = new Student("kobe", ["james"], 112);
 console.log(stu);
 // stu.studying()
-// stu.eating()
+// stu.eating() 
+
+//11
 
 var stu1 = new Student("kobe", ["james"], 112)
 var stu2 = new Student("why", ["lilei"], 113)

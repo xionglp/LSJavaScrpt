@@ -19,11 +19,8 @@ console.log(map2);
 
 // 常见的属性和方法
 console.log(map.size);
-
 map2.set("xionglp", "eee");
-
 console.log(map2.get("xionglp"));
-
 console.log(map2.has(obj1));
 
 map2.delete(1);

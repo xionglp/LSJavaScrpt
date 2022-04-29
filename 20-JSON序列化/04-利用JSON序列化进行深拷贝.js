@@ -20,5 +20,10 @@ const info2 = { ...obj } // 单独的一块内存地址 （info2指向一个新�
 obj.age = 100
 console.log(info2.age) // 18
 
-obj.friends.name = "james"
-console.log(info2.friends.name) // james
+// obj.friends.name = "james"
+// console.log(info2.friends.name) // james
+
+//利用JSON.stringify 和JSON.pares 进行深拷贝
+const info3 = JSON.parse(JSON.stringify(obj))
+obj.friends.name = "curry";
+console.log(info3.friends.name); // kobe

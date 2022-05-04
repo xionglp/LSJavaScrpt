@@ -1,5 +1,4 @@
 // json序列化
-
 const obj = {
   name: "why",
   age: 18,

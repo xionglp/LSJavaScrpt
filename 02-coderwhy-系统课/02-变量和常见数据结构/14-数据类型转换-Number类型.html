@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var num1 = '8'
+      var num2 = '4'
+      var result1 = num1 + num2
+      console.log(result1, typeof result1)
+
+      // 隐式转换
+      var result2 = num1 * num2
+      console.log(result2)
+
+      var result3 = Number(num1)
+      console.log(typeof result3)
+
+      //其他类型转成Number类型的规则：
+      console.log(Number(undefined)) // NaN
+      console.log(Number(true)) // 1
+      console.log(Number(false)) // 0
+      console.log(Number(null)) // 0
+      console.log(Number('   123  ')) // 123
+      console.log(Number('')) // 0
+    </script>
+  </body>
+</html>

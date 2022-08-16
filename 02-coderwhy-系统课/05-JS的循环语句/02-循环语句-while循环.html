@@ -17,11 +17,46 @@
       // }
 
       // 练习二: 打印0~99的数字
-      var count1 = 0
-      while (count1 < 100) {
-        console.log(count1)
-        count1++
+      // var count = 0
+      // while (count < 100) {
+      //   console.log(count)
+      //   count1++
+      // }
+
+      // 练习三： 计算0~99的和
+      // var count = 0
+      // var sum = 0
+      // while (count < 100) {
+      //   sum += count
+      //   count++
+      // }
+      // console.log('总数：', sum)
+
+      // 练习四： 计算0~99的奇数的和
+      // var count = 0
+      // var totalCount = 0
+      // while (count < 100) {
+      //   if (count % 2 !== 0) {
+      //     totalCount += count
+      //   }
+      //   count++
+      // }
+      // console.log('所有奇数的和：', totalCount)
+
+      // 练习五： 计算0~99的偶数的和
+      var count = 0
+      var totalCount = 0
+      // while (count < 100) {
+      //   if (count % 2 === 0) {
+      //     totalCount += count
+      //   }
+      //   count++
+      // }
+      while (count < 100) {
+        totalCount += count
+        count += 2
       }
+      console.log('所有偶数的和：', totalCount)
     </script>
   </body>
 </html>

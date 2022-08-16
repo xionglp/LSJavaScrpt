@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 随机生成0~99的随机数
+      var count = 2
+      var randomNum = Math.floor(Math.random() * 100)
+      for (var i = 0; i < count; i++) {
+        var inputNum = Number(prompt('请输入您猜测的数字：'))
+
+        if (inputNum === randomNum) {
+          alert('恭喜您，猜对了')
+        } else if (inputNum < randomNum) {
+          alert('您猜大了')
+        } else {
+          alert('您猜小了')
+        }
+
+        if (i === count - 1) {
+          alert('您的次数已经用完了')
+        }
+      }
+    </script>
+  </body>
+</html>

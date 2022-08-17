@@ -7,5 +7,28 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // 顺序执行
+      var num1 = 10
+      var num2 = 20
+
+      var result = num1 + num2
+      var result2 = num1 * num2
+
+      var isLogin = true
+      if (isLogin) {
+        console.log('访问购物车')
+        console.log('访问个人中心')
+      } else {
+        console.log('跳转到登录页面')
+      }
+
+      var i = 0
+      while (i < 10) {
+        console.log('执行循环语句')
+        i++
+      }
+    </script>
+  </body>
 </html>

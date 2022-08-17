@@ -7,5 +7,17 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      var info = {
+        name: 'xionglp',
+        age: 18,
+        [Symbol.toPrimitive]() {
+          return 123
+        },
+      }
+
+      console.log(123 == info)
+    </script>
+  </body>
 </html>

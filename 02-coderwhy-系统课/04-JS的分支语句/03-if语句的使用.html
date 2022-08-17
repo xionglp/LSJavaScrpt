@@ -7,5 +7,31 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      var score = 99
+      if (score > 90) {
+        console.log('去游乐场玩')
+      }
+
+      // 案例二： 苹果单价5元/斤, 如果购买的数量超过5斤, 那么立减8元
+      var price = 5
+      var weight = 7
+      var totalPrice = price * weight
+      if (weight > 5) {
+        totalPrice -= 8
+      }
+      console.log('总价格：', totalPrice)
+
+      // 案例三: 播放列表中 currentIndex
+      // ["鼓楼", "理想", "阿刁"]
+
+      var currentIndex = 2
+
+      currentIndex++
+      if (currentIndex === 3) {
+        currentIndex = 0
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // var result = prompt('请输入一个数字')
+
+      function sayHello(name) {
+        console.log(`Hi ${name}`)
+      }
+
+      var foo = sayHello('kobe')
+      console.log(foo)
+
+      // 所有的函数，如果没有写返回值，默认的返回值是undefined
+      // 我们也可以明确的协商return，如果return后面什么内容都没有，返回的也是undefined
+      function bar() {
+        console.log('bar函数被执行。。。')
+        return
+      }
+
+      var result = bar()
+      console.log('result:', result)
+
+      // 如果函数执行到return时，函数会立即停止执行，退出函数
+      function baz() {
+        console.log('hello baz')
+        return
+        console.log('hello world')
+        console.log('hello xionglp')
+      }
+    </script>
+  </body>
+</html>

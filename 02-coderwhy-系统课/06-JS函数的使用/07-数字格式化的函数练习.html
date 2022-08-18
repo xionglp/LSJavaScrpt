@@ -7,5 +7,30 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // 从服务器拿到很多的数字
+      var playCount1 = 13687 // 13687
+      var playCount2 = 5433322 // 543万
+      var playCount3 = 8766633333 // 87亿
+
+      //封装一个工具函数： 对数字进行格式化
+
+      function formatCount(count) {
+        var result = 0
+        if (count >= 10_0000_0000) {
+          result = Math.floor(count / 1_0000_0000) + '亿'
+        } else if (count >= 10_0000) {
+          result = Math.floor(count / 1_0000) + '万'
+        } else {
+          result = count
+        }
+        return result
+      }
+
+      console.log(formatCount(playCount1))
+      console.log(formatCount(playCount2))
+      console.log(formatCount(playCount3))
+    </script>
+  </body>
 </html>

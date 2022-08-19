@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 递归调用： 通俗讲就是自己调用自己，
+      // 前提是得有一个结束条件，否则会死循环一直调用下去
+
+      // 需求：封装一个函数可以实现x的n次方
+      // 方式一：
+      function pow1(x, n) {
+        return x ** n
+      }
+      console.log(pow1(2, 3))
+      console.log(pow1(3, 3))
+      console.log(pow1(4, 4))
+
+      // 方式二：
+      // 2 * 2 * 2
+      // 3 * 3 * 3
+      function pow2(x, n) {
+        var total = 1
+        for (let i = 0; i < n; i++) {
+          total *= x
+        }
+        return total
+      }
+      console.log(pow2(2, 3))
+      console.log(pow2(3, 3))
+      console.log(pow2(4, 4))
+
+      // 方式三：递归
+      function pow(x, n) {
+        if (n === 1) return x
+        return x * pow(x, n - 1) // 2 * 2 * pow(2, 1)
+      }
+      console.log(pow(2, 3))
+      console.log(pow(3, 3))
+      console.log(pow(4, 4))
+    </script>
+  </body>
+</html>

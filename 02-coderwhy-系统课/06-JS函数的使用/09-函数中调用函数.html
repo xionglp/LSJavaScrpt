@@ -7,5 +7,18 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      function bar() {
+        console.log('bar函数执行----')
+      }
+
+      function foo() {
+        console.log('foo函数执行-----11')
+        bar()
+      }
+
+      foo()
+    </script>
+  </body>
 </html>

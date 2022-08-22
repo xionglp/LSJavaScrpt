@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var person = {
+      name: "xionglp",
+      age: 18, 
+      height: 1.88,
+      friend: {
+        name: "kobe",
+        age: 35,
+        height: 1.98
+      },
+      run: function() {
+        console.log("running~")
+      },
+      eat: function() {
+        console.log("eatting~")
+      },
+      study: function() {
+        console.log("studying~")
+      }
+    }
+
+    // 访问对象中的属性
+    console.log(person.name)
+    console.log(person.friend.age)
+    person.eat()
+
+    // 修改对象中的属性
+    person.age = 25
+    person.run = function() {
+      console.log("I am Running~")
+    }
+    console.log(person.age)
+    person.run()
+
+    // 添加对象的属性
+    person.address = "深圳市"
+    console.log(person)
+
+    // 删除对象中的属性
+    delete person.age
+    console.log(person)
+
+
+  </script>
+</body>
+</html>

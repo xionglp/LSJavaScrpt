@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+
+      // 函数回调的理解
+      function foo(fn) {
+        // 通过fn去调用bar函数的过程，称之为函数的回调
+        fn()
+      }
+
+      function bar() {
+        console.log("bar函数被执行~")
+      }
+      foo(bar)
+
+
+      // 案例
+      function request(url, callback) {
+        console.log("想服务器发送网络请求， 异步的")
+        var list = [
+          "HTML5",
+          "CSS",
+          "JavaScript"
+        ]
+        callback(list)
+      }
+
+      function handleResult(res) {
+        console.log("res:", res)
+      }
+      // request("url", handleResult)
+
+      // 重构
+      request("url", function(res) {
+        console.log("在handleRequest获取到res结果:", res)
+      })
+    </script>
+  </body>
+</html>

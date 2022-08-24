@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+
+      function HYNumber() {
+
+      }
+      HYNumber.parseInt2 = function() {
+
+      }
+      window.parseInt2 = HYNumber.parseInt2
+      console.log(window.parseInt2 === HYNumber.parseInt2)
+
+      // 类属性, Number中本身也是有自己的熟悉
+      console.log(Number.MAX_VALUE)
+      console.log(Number.MIN_VALUE)
+      console.log(Number.MAX_SAFE_INTEGER)
+      console.log(Number.MIN_SAFE_INTEGER)
+
+      var num = 123 // new Numbew(123)
+      console.log(num.toString(), typeof num.toString())
+      console.log(num.toString(2)) // 2进制的表现形式
+      console.log(num.toString(16)) // 16进制的表现形式
+
+      var pi = 3.14159
+      console.log(pi.toFixed(3)) // 会进行四色五入
+
+      var number = "123.521"
+      console.log(Number(number).toFixed(0))
+      console.log(Number.parseInt(number)) // 不会进行四色五入
+      console.log(Number.parseFloat(number))
+
+      console.log(parseInt(number))
+      console.log(parseFloat(number))
+    </script>
+
+  </body>
+</html>

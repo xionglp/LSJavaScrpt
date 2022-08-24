@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+      var name = "hello world"
+      var height = 1.889
+      
+      // 在调用原始类型的属性或者方法时，内部的操作： name = new String(name)
+      console.log(name.length)
+      console.log(name.split(" "))
+      console.log(height.toFixed(2))
+
+      var name1 = new String("hello vue.js")
+      console.log(typeof name, typeof name1)
+    </script>
+  </body>
+</html>

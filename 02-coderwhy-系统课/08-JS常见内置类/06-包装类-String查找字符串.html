@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+
+    <script>
+      var message = "my name is xionglp"
+      var name = "xionglp"
+
+      // 判断一个字符串是否在另一个字符串里面
+      var index = message.indexOf(name)
+      if (index !== -1) {
+        console.log("包含")
+      } else {
+        console.log("不包含")
+      }
+
+      // ES6新增一个方法判断包含关系
+      if (message.includes(name)) {
+        console.log("包含")
+      }
+
+      // startWith: 是否以XXX开头
+      if (message.startsWith("my")) {
+        console.log("message以my开头")
+      }
+
+      if (message.endsWith("xionglp")) {
+        console.log("message以xionglp结尾")
+      }
+
+      // 字符串替换
+      // var newMessage = message.replace("xionglp", "kobe")
+      // console.log(newMessage)
+
+      var newName = "kobe"
+      var newMessage = message.replace("xionglp", function() {
+        return newName.toUpperCase()
+      })
+      console.log(newMessage)
+
+
+    </script>
+  </body>
+</html>

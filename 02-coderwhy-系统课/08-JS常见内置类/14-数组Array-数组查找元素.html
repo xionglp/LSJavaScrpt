@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // indexof、手动forEach、find
+      var names = ["abc", "cba", "mba", "nba"]
+
+      console.log(names.indexOf("nba")) // 如果 = -1 就是没有查找到
+
+      var students = [
+        { id: 100, name: "why", age: 18 },
+        { id: 101, name: "kobe", age: 30 },
+        { id: 102, name: "james", age: 25 },
+        { id: 103, name: "why", age: 22 }
+      ]
+
+      // 查找学号为101的学生信息
+      var stu = null
+      for (var i = 0; i < students.length; i++) {
+        var item = students[1]
+        if (item.id === 101) {
+          stu = item
+          break
+        }
+      }
+
+      if (stu) {
+        console.log("找到学号为101的学生", stu)
+      } else {
+        console.log("没有找到")
+      }
+
+      // find
+      var stu = students.find(function(item) {
+        if (item.id === 109) {
+          return true
+        }
+      })
+      console.log(stu)
+
+
+
+    </script>
+  </body>
+</html>

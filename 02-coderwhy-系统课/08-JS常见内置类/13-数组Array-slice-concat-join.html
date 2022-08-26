@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var names = ["abc", "cba", "nba", "mba", "why", "kobe"]
+
+      // 1. slice: 不会修改原数组
+      // splice的区别就是splice会修改原数组
+
+      var newNames = names.slice(2, 4)
+      console.log(newNames)
+
+      // 2. concat方法： 将多个数组拼接在一起
+      var names1 = ["aaa", "bbb"]
+      var names2 = ["ccc", "ddd"]
+      var names3 = ["mmm", "nnn"]
+
+      var newNames2 = names1.concat(names2, names3)
+      console.log(newNames2)
+
+      // 3. join方法： 拼接
+      console.log(names.join("-"))
+
+    </script>
+  </body>
+</html>

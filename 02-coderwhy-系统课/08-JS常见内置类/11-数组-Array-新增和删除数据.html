@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var arrs = ["abc", "cba", "nba", "mba", "abcd"]
+
+      // 1. 在数组的尾部添加和删除元素
+      arrs.push("why", "kobe")
+      console.log(arrs)
+
+      arrs.pop()
+      console.log(arrs)
+
+      // 2. 在数组的头部添加和删除元素 (unshift, shift)
+      arrs.unshift("bbb")
+      console.log(arrs)
+      arrs.shift()
+      console.log(arrs)
+      // 3. 在任意位置添加、删除、替换元素
+      // start: 从什么位置开始， 
+      // deletecount： 删除的个数， 0的话就是删除0个，也就是添加元素
+      // 最后一个元素就是要添加或者替换的元素
+      arrs.splice(1, 2)
+      console.log(arrs)
+      arrs.splice(2, 0, "mmm", "nnn")
+      console.log(arrs)
+
+      arrs.splice(3, 1, "NNN")
+      console.log(arrs)
+      
+      
+    </script>
+  </body>
+</html>

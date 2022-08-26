@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var names = ["abc", "cba", "nba", "mba"]
+
+      var product = { name: "苹果", price: 12 }
+      var products = [
+        { name: "鼠标", price: 98 },
+        { name: "键盘", price: 100 },
+        { name: "西瓜", price: 20 },
+        product
+      ]
+
+      // 方式二： 类数组
+      var arr1 = new Array()
+      var arr2 = new Array("aaa", "bbb", "ccc")
+      console.log(arr1, arr2)
+
+      // 传入一个数组， 默认创建一个对应长度的数组
+      var arr3 = new Array(5)
+      console.log(arr3)
+
+      // 通过索引访问元素
+      console.log(names[0],names[names.length - 1])
+    </script>
+  </body>
+</html>

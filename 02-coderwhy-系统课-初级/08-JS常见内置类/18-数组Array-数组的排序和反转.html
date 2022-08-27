@@ -9,18 +9,15 @@
   </head>
   <body>
     <script>
-      //  构造函数使用大驼峰
-      function Person() {
-
-      }
-
-      var p1 = new Person()
-      console.log(p1)
-
-      // 普通函数使用小驼峰
-      function sayHello() {
-        
-      }
+      var nums = [100, 20, 45, 58, 22]
+      // sort排序
+      nums.sort(function(item1, item2) {
+        // item1 和 item2 进行比较
+        // 谁小 谁排在前面
+        return item1 - item2
+      })
+      console.log(nums)
+      console.log(nums.reverse()) // 反转
     </script>
   </body>
 </html>

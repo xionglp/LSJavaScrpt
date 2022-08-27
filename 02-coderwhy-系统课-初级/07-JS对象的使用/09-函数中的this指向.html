@@ -7,5 +7,43 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // 1. 如果普通的函数被默认调用，那么this指向的就是window
+      // function foo(name, age) {
+      //   console.log(arguments)
+      //   console.log(this) // window
+      // }
+
+      // foo("xionglp", 123)
+
+      // 2. 如果函数它是被某一个对象引用并且调用它，那么this会指向这个对象
+      var obj = {
+        name: "xionglp",
+        running: function() {
+          console.log(this) // obj
+          // console.log(obj)
+          // console.log(obj === this)
+        }
+      }
+
+      obj.running()
+
+      // 题目一：
+      var fn = obj.running
+      fn() // window
+
+      // 题目二：
+      // function bar() {
+      //   console.log(this)
+      // }
+
+      // var obj = {
+      //   name: "why",
+      //   bar: bar
+      // }
+
+      // obj.bar() // obj
+    </script>
+  </body>
 </html>

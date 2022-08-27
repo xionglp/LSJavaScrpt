@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 1. forEach函数
+      var names = ["abc", "cba", "nba", "mba"]
+
+      names.forEach(function(item) {
+        console.log(item, this)
+      }, {name: "xionglp"})
+
+      // 2. filter函数： 过滤
+      var nums = [11, 20, 55, 100, 88, 32]
+      var newNums = nums.filter(function(item) {
+        return item % 2 === 0
+      })
+      console.log(newNums)
+
+      // 3.map函数： 映射
+      var mapNums = nums.map(function(item) {
+        return item * item
+      })
+      console.log(mapNums)
+
+      // 4. reduce
+      var result = nums.reduce(function(preValue, item) {
+        console.log(preValue, item)
+        return preValue + item
+      }, 0)
+      console.log(result)
+
+      var products = [
+        { name: "鼠标", price: 88, count: 3 },
+        { name: "键盘", price: 200, count: 2 },
+        { name: "耳机", price: 9.9, count: 10 },
+      ]
+      var totalPrice = products.reduce(function(preValue, item) {
+        return preValue + (item.price * item.count)
+      }, 0)
+      console.log("总价格：", totalPrice)
+
+      // 过滤到所有的偶数，映射所有偶数的平方，并且计算他们的和
+      var totalNum = nums.filter(item => {
+        return item % 2 === 0
+      }).map(item => {
+        return item * item
+      }).reduce((preValue, item) => {
+        return preValue + item
+      }, 0)
+      console.log(totalNum)
+
+    </script>
+  </body>
+</html>

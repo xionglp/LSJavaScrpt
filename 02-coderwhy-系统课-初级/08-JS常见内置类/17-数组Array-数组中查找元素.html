@@ -9,18 +9,14 @@
   </head>
   <body>
     <script>
-      //  构造函数使用大驼峰
-      function Person() {
+      var names = ["abc", "cba", "nba", "mba"]
+      console.log(names.includes("nba"))
 
-      }
-
-      var p1 = new Person()
-      console.log(p1)
-
-      // 普通函数使用小驼峰
-      function sayHello() {
-        
-      }
+      // findIndex: 查找元素的索引
+      var findIndex = names.findIndex(function(item, index, arr) {
+        return item === "nba"
+      })
+      console.log(findIndex)
     </script>
   </body>
 </html>

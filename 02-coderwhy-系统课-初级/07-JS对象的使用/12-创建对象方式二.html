@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 工厂函数创建对象
+      function createStudent(name, age, height) {
+        var stu = {}
+        stu.name = name
+        stu.age = age
+        stu.height = height
+        stu.running = function() {
+          console.log("running~")
+        }
+        return stu
+      }
+
+      var stu1 = createStudent("xionglp", 18, 1.78)
+      var stu2 = createStudent("kobe", 20, 1.98)
+      console.log(stu1)
+      console.log(stu2)
+    </script>
+  </body>
+</html>

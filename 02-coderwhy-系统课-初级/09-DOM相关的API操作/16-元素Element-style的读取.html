@@ -5,7 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
+    <style>
+      .box {
+        font-size: 20px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    
+  <div class="box" style="background-color: red;">
+    我是box
+  </div>
+
+  <script>
+    var boxEl = document.querySelector(".box")
+
+    console.log(boxEl.style.backgroundColor)
+    // console.log(boxEl.style.fontSize) // "" 用下面的那种方式
+    console.log(getComputedStyle(boxEl).fontSize)
+  </script>
+  </body>
 </html>

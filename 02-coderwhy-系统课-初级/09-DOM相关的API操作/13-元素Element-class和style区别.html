@@ -5,7 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
+    <style>
+      .active {
+        color: red;
+        font-size: 24px;
+        background-color: orange;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+
+    <div class="box">我是box</div>
+
+    <script>
+      var boxEl = document.querySelector(".box")
+
+      var count = 1
+      boxEl.onclick = function() {
+        // 1. 直接修改样式
+        // boxEl.style.color = "red"
+        // boxEl.style.fontSize = "24px"
+        // boxEl.style.backgroundColor = "green"
+
+        // 2. 动态添加一个class
+        boxEl.className = "active"
+        boxEl.style.width = 100 * count + "px"
+        count++
+      }
+    </script>
+  </body>
 </html>

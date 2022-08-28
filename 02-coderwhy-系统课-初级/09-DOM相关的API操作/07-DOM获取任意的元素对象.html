@@ -7,5 +7,61 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    
+    <div class="box">
+      <h2>我是标题</h2>
+      <div class="container">
+        <p>
+          我是段落, <span class="keyword">coderwhy</span> 哈哈哈哈
+        </p>
+        <p>
+          我也是段落, <span class="keyword">kobe</span> 呵呵呵呵额
+        </p>
+
+        <div class="article">
+          <h3 id="title">我是小标题</h3>
+          <p>
+            我是文章的内容, 嘿嘿嘿嘿嘿
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 1. 通过导航获取
+      // var bodyEl = document.body
+      // var boxEl = bodyEl.firstElementChild
+      // var containerEl = boxEl.children[1]
+      // var pEl = containerEl.children[0]
+      // var spanEl = pEl.children[0]
+      // spanEl.style.color = "red"
+
+      // 2. 通过getElementBy*
+      // var keywordEls = document.getElementsByClassName("keyword")
+      // // keywordEls[0].style.color = "orange"
+      // for (let i = 0; i < keywordEls.length; i++) {
+      //   const item = keywordEls[i];
+      //   item.style.color = "green"
+      // }
+
+      // var titleEl = document.getElementById("title")
+      // titleEl.style.color = "orange"
+
+      // 3. querySelector: 通过选择器查询
+      var keywordEl = document.querySelector(".keyword")
+      var keywordEls = document.querySelectorAll(".keyword")
+
+      for (var el of keywordEls) {
+        el.style.color = "red"
+      }
+      console.log(keywordEls)
+
+      var titleEl = document.querySelector("#title")
+      titleEl.style.color = "orange"
+
+
+    </script>
+  
+  </body>
 </html>

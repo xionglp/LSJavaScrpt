@@ -7,5 +7,34 @@
     <title>Document</title>
     <style></style>
   </head>
-  <body></body>
+  <body>
+    <div id="abc" class="box" title="box"
+          age="18" height="1.88">
+      我是box
+    </div>
+
+    <input type="checkbox" checked="checked">
+
+    <script>
+
+      var boxEl = document.querySelector(".box")
+      
+      console.log(boxEl.hasAttribute("age"), boxEl.hasAttribute("box"))
+      console.log(boxEl.getAttribute("age"), boxEl.getAttribute("class"))
+
+      boxEl.setAttribute("id", "cba")
+      console.log(boxEl.getAttribute("id"))
+
+      var boxAttributes = boxEl.attributes
+      for (const attribute of boxAttributes) {
+        console.log(attribute.name, attribute.value)
+      }
+
+      // 通过getAttribute()  -> 字符串类型
+      var inputEl = document.querySelector("input")
+      console.log(inputEl.getAttribute("checked"))
+
+    </script>
+
+  </body>
 </html>

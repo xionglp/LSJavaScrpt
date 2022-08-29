@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+
+    <button class="add">+</button>
+    <button class="sub">-</button>
+    <h2 class="counter">0</h2>
+
+    <script>
+
+      // 获取按钮
+      var addBtnEl = document.querySelector(".add")
+      var subBtnEl = document.querySelector(".sub")
+      var h2El = document.querySelector(".counter")
+
+      // 监听按钮的点击
+      var counter = 0
+      addBtnEl.onclick = function() {
+        counter++
+        h2El.textContent = counter
+      }
+
+      subBtnEl.onclick = function() {
+        counter--
+        h2El.textContent = counter
+      }
+    </script>
+
+  </body>
+</html>

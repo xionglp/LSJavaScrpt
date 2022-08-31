@@ -5,7 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+      }
+
+      .box span {
+        width: 100px;
+        height: 100px;
+        background-color: rebeccapurple;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+
+    <div class="box">
+      <span></span>
+    </div>
+
+    <script>
+      var boxEl = document.querySelector(".box")
+      var spanEl = document.querySelector("span")
+
+      // onmouseenter: 鼠标移到元素上（进入）不支持冒泡
+      // onmouseover: 鼠标移到某元素之上（over 在...上面） 支持冒泡
+      boxEl.onmouseenter = function() {
+        console.log("box onmouseenter")
+      }
+      boxEl.onmouseleave = function() {
+        console.log("box onmouseleave")
+      }
+
+      spanEl.onmouseenter = function() {
+        console.log("span onmouseenter")
+      }
+      spanEl.onmouseleave = function() {
+        console.log("span onmouseleave")
+      }
+
+      boxEl.onmouseover = function() {
+        console.log("box onmouseover")
+      }
+      boxEl.onmouseout = function() {
+        console.log("box onmouseout")
+      }
+    </script>
+
+  </body>
 </html>

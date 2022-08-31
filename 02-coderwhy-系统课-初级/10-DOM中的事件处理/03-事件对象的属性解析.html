@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background-color: #f00;
+      }
+
+      .box span {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span></span>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script>
+      var spanEl = document.querySelector("span")
+      var divEl = document.querySelector(".box")
+      var bodyEl = document.body
+
+      // 冒泡： 从最内层的span往外传递(span -> body)
+      // 捕获： 从最外层的body往内传递（body -> span）
+
+      divEl.onclick = function(event) {
+        console.log("事件类型：", event.type)
+        console.log("事件所处的阶段：",event.eventPhase)
+
+        // 2.比较少使用
+        // console.log("事件元素中位置", event.offsetX, event.offsetY)
+        // console.log("事件客户端中位置", event.clientX, event.clientY)
+        // console.log("事件页面中位置", event.pageX, event.pageY)
+        // console.log("事件在屏幕中位置", event.screenX, event.screenY)
+
+        console.log(event.target) // 当前事件发生的元素 （触发的是哪个元素）
+        console.log(event.currentTarget) // 当前事件处理的元素 
+        console.log(event.target === event.currentTarget)
+      }
+    </script>
+  </body>
+</html>

@@ -24,8 +24,3 @@ Promise.race([p1, p2, p3]).then(res => {
 }, err => {
   console.log(err)
 })
-
-
-// 从这里开始
-// 茶轴和红轴的机械键盘不错
-// 青轴声音太大， 黑轴还没有用过

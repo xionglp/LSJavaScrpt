@@ -21,7 +21,6 @@ function lsCurrying(fn) {
       return curried2;
     }
   }
-
   return curried;
 }
 

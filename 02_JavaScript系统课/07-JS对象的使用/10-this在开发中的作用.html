@@ -9,12 +9,12 @@
   </head>
   <body>
     <script>
-
       var info = {
         name: "xionglp",
         age: 18,
-        running: function() {
+        running: function() { // 函数才有作用域， 对象没有作用域，对象只是一种数据类型
           console.log("running~", this.name)
+          console.log(this)
         },
         studying: function() {
           console.log("study~", this.name)
@@ -27,7 +27,6 @@
       info.running()
       info.studying()
       info.eating()
-
     </script>
   </body>
 </html>

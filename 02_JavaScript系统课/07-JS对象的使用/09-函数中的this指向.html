@@ -9,6 +9,9 @@
   </head>
   <body>
     <script>
+      // 1.在全局环境下，this指向window
+      // 2.通过对象调用，this指向调用对象
+
       // 1. 如果普通的函数被默认调用，那么this指向的就是window
       // function foo(name, age) {
       //   console.log(arguments)
@@ -22,11 +25,8 @@
         name: "xionglp",
         running: function() {
           console.log(this) // obj
-          // console.log(obj)
-          // console.log(obj === this)
         }
       }
-
       obj.running()
 
       // 题目一：

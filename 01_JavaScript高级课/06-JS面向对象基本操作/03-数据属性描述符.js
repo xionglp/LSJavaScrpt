@@ -1,7 +1,7 @@
 // 1、configurable: 表示属性是否可以通过delete删除。默认是false
-// 2、enumerable: 是否可枚举 默认是false
-// 3、writable: 是否可以修改属性的值， 默认是false
-// 4、value： 表示属性的值， 默认是undefined
+// 2、enumerable:   是否可枚举 默认是false
+// 3、writable:     是否可以修改属性的值， 默认是false
+// 4、value：       表示属性的值， 默认是undefined
 
 var obj = {
   name: "xionglp",

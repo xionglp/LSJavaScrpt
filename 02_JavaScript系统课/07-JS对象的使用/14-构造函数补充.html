@@ -9,11 +9,15 @@
   </head>
   <body>
     <script>
-      //  构造函数使用大驼峰
+      // ES5之前，通过function关键字来申明一个构造函数（类），之后通过new关键字进行调用
+      // ES6之后，JavaScript可以像别的编程语言一样，通过class申明一个类
+      // 构造函数使用大驼峰
       function Person() {
-
+        
       }
 
+      // 构造函数也是一个普通的函数，从表现形式来说和别的函数没有区别
+      // 如果new 操作符调用了，就是一个构造函数了
       var p1 = new Person()
       console.log(p1)
 

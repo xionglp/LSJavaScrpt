@@ -12,18 +12,15 @@
       // arguments的认识
       function foo(name, age) {
         console.log(arguments)
-
         console.log(typeof arguments)
-
         for (let i = 0; i < arguments.length; i++) {
           const element = arguments[i]
           console.log(element)
         }
       }
-
       foo('xionglp', 18, '深圳市')
 
-      // arguments 案例
+      // 案例一: arguments 
       function sum() {
         var total = 0
         for (let i = 0; i < arguments.length; i++) {
@@ -32,7 +29,6 @@
         }
         return total
       }
-
       console.log(sum(10, 20))
       console.log(sum(10, 20, 30))
     </script>

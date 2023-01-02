@@ -9,18 +9,15 @@
   </head>
   <body>
     <script>
-
       // 函数回调的理解
       function foo(fn) {
-        // 通过fn去调用bar函数的过程，称之为函数的回调
-        fn()
+        fn() // 通过fn去调用bar函数的过程，称之为函数的回调
       }
 
       function bar() {
         console.log("bar函数被执行~")
       }
       foo(bar)
-
 
       // 案例
       function request(url, callback) {

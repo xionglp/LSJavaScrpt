@@ -14,9 +14,9 @@
       var age = 19
 
       // 定义对象类型的变量
-      var obj = {}
-      var foo = function() {}
-      function bar() {}
+      var obj = {} // 对象类型， 分配在堆内存
+      var foo = function() {} // 堆内存
+      function bar() {}       // 堆内存
 
       console.log(typeof obj)
       console.log(typeof foo)
@@ -25,9 +25,7 @@
       var info = {}
       info.name = "kobe"
 
-      function sayHello() {
-
-      }
+      function sayHello() {}
       sayHello.name = "xionglp"
       console.log(sayHello.name)
     </script>

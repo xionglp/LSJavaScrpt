@@ -9,25 +9,21 @@
   </head>
   <body>
     <script>
-      var names = ["abc", "cba", "nba", "mba", "why", "kobe"]
-
       // 1. slice: 不会修改原数组
       // splice的区别就是splice会修改原数组
-
-      var newNames = names.slice(2, 4)
+      var names = ["abc", "cba", "nba", "mba", "why", "kobe"]
+      var newNames = names.slice(2, 4) // 从start 到 end 截取(如果end不传则截取到最后)
       console.log(newNames)
 
       // 2. concat方法： 将多个数组拼接在一起
       var names1 = ["aaa", "bbb"]
       var names2 = ["ccc", "ddd"]
       var names3 = ["mmm", "nnn"]
-
       var newNames2 = names1.concat(names2, names3)
       console.log(newNames2)
 
       // 3. join方法： 拼接
       console.log(names.join("-"))
-
     </script>
   </body>
 </html>

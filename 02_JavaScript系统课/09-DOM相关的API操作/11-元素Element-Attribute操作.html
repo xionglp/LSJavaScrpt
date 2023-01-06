@@ -8,22 +8,17 @@
     <style></style>
   </head>
   <body>
-    <div id="abc" class="box" title="box"
-          age="18" height="1.88">
+    <div id="abc" class="box" title="box" age="18" height="1.88">
       我是box
     </div>
-
     <input type="checkbox" checked="checked">
 
     <script>
-
       var boxEl = document.querySelector(".box")
-      
-      console.log(boxEl.hasAttribute("age"), boxEl.hasAttribute("box"))
-      console.log(boxEl.getAttribute("age"), boxEl.getAttribute("class"))
-
+      console.log(boxEl.hasAttribute("age"), boxEl.hasAttribute("box")) // ture false
+      console.log(boxEl.getAttribute("age"), boxEl.getAttribute("class")) // 18 box
       boxEl.setAttribute("id", "cba")
-      console.log(boxEl.getAttribute("id"))
+      console.log(boxEl.getAttribute("id")) // cba
 
       var boxAttributes = boxEl.attributes
       for (const attribute of boxAttributes) {
@@ -33,7 +28,6 @@
       // 通过getAttribute()  -> 字符串类型
       var inputEl = document.querySelector("input")
       console.log(inputEl.getAttribute("checked"))
-
     </script>
 
   </body>

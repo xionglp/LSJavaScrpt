@@ -14,27 +14,22 @@
     </style>
   </head>
   <body>
-
     <div class="box">我是box</div>
-
     <script>
       var boxEl = document.querySelector(".box")
       // 1. className
       boxEl.className = "abc"
-
       // 2.  classList操作class
       boxEl.classList.add("cab")
       boxEl.classList.add("active")
       boxEl.classList.remove("cab")
-
       boxEl.onclick = function() {
-        // if (boxEl.classList.contains("active")) {
-        //   boxEl.classList.remove("active")
-        // } else {
-        //   boxEl.classList.add("active")
-        // }
-
-        boxEl.classList.toggle("active")
+        if (boxEl.classList.contains("active")) {
+          boxEl.classList.remove("active")
+        } else {
+          boxEl.classList.add("active")
+        }
+        // boxEl.classList.toggle("active") // 如果类不存在就添加类，否则就移除
       }
     </script>
   </body>

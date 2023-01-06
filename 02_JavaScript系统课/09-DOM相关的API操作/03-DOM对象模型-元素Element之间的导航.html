@@ -22,6 +22,7 @@
     </ul>
 
     <script>
+      // children 子元素（类似div、ul元素）， childNode 子节点（包括注释、文本等）
       var bodyEl = document.body
 
       // 根据body元素去获取子元素
@@ -33,14 +34,13 @@
       var boxEl2 = bodyEl.children[0]
       console.log(boxEl1, boxEl2, boxEl1 === boxEl2)
 
-      // 获取Ul元素
+      // 获取ul元素  nextElementSibling - 后兄弟子元素
       var ulEl = boxEl1.nextElementSibling
       console.log(ulEl)
 
       // 获取li元素
       var liEl = ulEl.children
       console.log(liEl)
-
 
     </script>
   </body>

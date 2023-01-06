@@ -9,17 +9,13 @@
   </head>
   <body>
     <div class="box" style="background-color: aqua; color: white;">我是box</div>
-
     <script>
       var boxEl = document.querySelector(".box")
-
       // 在property使用驼峰格式
       console.log(boxEl.style.backgroundColor)
-
       // 如果将一个属性的值设为空，那么使用的是默认样式
       boxEl.style.backgroundColor = ""
       boxEl.style.fontSize = ""
-
       // 设置多个样式
       // boxEl.style.fontSize = "30px"
       // boxEl.style.color = "red"

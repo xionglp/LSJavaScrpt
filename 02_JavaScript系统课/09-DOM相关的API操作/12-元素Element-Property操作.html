@@ -8,22 +8,18 @@
     <style></style>
   </head>
   <body>
-
     <!-- 元素中的属性称之为attribute -->
     <!-- 标准的attribute在对应的对象模型中都有对应的property -->
-    <div id="abc" class="box" title="标题"
-         age="18" height="1.88">
+    <div id="abc" class="box" title="标题" age="18" height="1.88">
       我是box
     </div>
-
     <input type="checkbox" checked>
-
     账号: <input class="account" type="text">
     <button class="btn">设置input的值</button>
 
     <script>
       var boxEl = document.querySelector(".box")
-      console.log(boxEl.id, boxEl.title)
+      console.log(boxEl.id, boxEl.title) // abc 标题
 
       var inputEl = document.querySelector("input")
       if (inputEl.checked) {
@@ -31,19 +27,15 @@
       }
 
       boxEl.id = "aaaa"
-      console.log(boxEl.getAttribute("id"))
-
+      console.log(boxEl.getAttribute("id")) // aaa
       boxEl.setAttribute("title", "哈哈哈")
-      console.log(boxEl.title)
+      console.log(boxEl.title) // 哈哈哈
 
       var accountInputEl = document.querySelector(".account")
       var btnEl = document.querySelector(".btn")
       btnEl.onclick = function() {
-        // accountInputEl.setAttribute("value", "coderwhy")
         accountInputEl.value = "kobe"
       }
-
-
     </script>
   </body>
 </html>

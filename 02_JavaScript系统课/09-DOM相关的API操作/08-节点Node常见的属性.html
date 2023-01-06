@@ -8,7 +8,6 @@
     <style></style>
   </head>
   <body>
-
     <!-- 我是注释 -->
     我是文本
     <div class="box">
@@ -29,8 +28,7 @@
         } else if (node.nodeType === 1) {
         }
       }
-
-      console.log(commentNode.nodeType, textNode.nodeType, divNode.nodeType)
+      console.log(commentNode.nodeType, textNode.nodeType, divNode.nodeType) // 8 3 1
       console.log(Node.COMMENT_NODE)
 
       // innerHTML: 对应的html元素也会获取
@@ -41,7 +39,6 @@
       // 设置文本中包含元素内容, 那么innerHTML浏览器会解析, textContent会当成文本的一部分
       // divNode.innerHTML = "<h2>呵呵呵呵</h2>"
       divNode.textContent = "<h2>呵呵呵呵呵</h2>"
-
       console.log(divNode.innerHTML)
       console.log(divNode.textContent)
     </script>

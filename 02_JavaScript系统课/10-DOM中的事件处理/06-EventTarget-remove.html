@@ -11,13 +11,11 @@
     <button>按钮</button>
 
     <script>
-      var btnEl = document.querySelector("button")
-
       // 监听函数移除的过程
+      var btnEl = document.querySelector("button")
       var foo = function() {
         console.log("监听按钮的点击")
       }
-
       btnEl.addEventListener("click", foo)
 
       setTimeout(() => {

@@ -34,26 +34,25 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <script>
+      // 冒泡: 从最内层的span往外传递(span -> body)
+      // 捕获: 从最外层的body往内传递（body -> span）
       var spanEl = document.querySelector("span")
       var divEl = document.querySelector(".box")
       var bodyEl = document.body
 
-      // 冒泡： 从最内层的span往外传递(span -> body)
-      // 捕获： 从最外层的body往内传递（body -> span）
-
       divEl.onclick = function(event) {
         console.log("事件类型：", event.type)
         console.log("事件所处的阶段：",event.eventPhase)
+
+        console.log(event.target) // 当前事件发生的元素 （触发的是那个元素）
+        console.log(event.currentTarget) // 当前事件处理的元素 
+        console.log(event.target === event.currentTarget)
 
         // 2.比较少使用
         // console.log("事件元素中位置", event.offsetX, event.offsetY)
         // console.log("事件客户端中位置", event.clientX, event.clientY)
         // console.log("事件页面中位置", event.pageX, event.pageY)
         // console.log("事件在屏幕中位置", event.screenX, event.screenY)
-
-        console.log(event.target) // 当前事件发生的元素 （触发的是哪个元素）
-        console.log(event.currentTarget) // 当前事件处理的元素 
-        console.log(event.target === event.currentTarget)
       }
     </script>
   </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态显示时间</title>
+    <style></style>
+  </head>
+  <body>
+
+    <h2 class="time">2023-01-14 11:14:30</h2>
+
+    <script>
+      function padLeft(content, count, padStr) {
+        count = count || 2
+        padStr = padStr || "0"
+        content =  String(content)
+        return content.padStart(count, padStr)
+      }
+
+      var timeEl = document.querySelector(".time")
+      // 获取具体的时间进行格式化
+      var date = new Date()
+      var year = date.getFullYear()
+      var month = padLeft(date.getMonth() + 1)
+      var day = padLeft(date.getDate())
+      var hour = padLeft(date.getHours())
+      var minute = padLeft(date.getMinutes())
+      var second = padLeft(date.getSeconds())
+      timeEl.textContent = `${year}-${month}-${day} ${hour}:${minute}:${second}`
+    </script>
+
+  </body>
+</html>

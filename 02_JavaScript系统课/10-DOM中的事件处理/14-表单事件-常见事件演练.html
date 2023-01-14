@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>表单事件</title>
     <style></style>
   </head>
   <body>
@@ -24,7 +24,6 @@
       inputEl.onfocus = function() {
         console.log("获取焦点")
       }
-
       inputEl.onblur = function() {
         console.log("失去焦点")
       }
@@ -33,7 +32,6 @@
       inputEl.oninput = function() {
         console.log("input正在输入", inputEl.value)
       }
-
       inputEl.onchange = function() {
         console.log("change事件内容发生改变", inputEl.value)
       }
@@ -43,14 +41,10 @@
       formEl.onreset = function(event) {
         console.log("重置事件")
       }
-
       formEl.onsubmit = function(event) {
         console.log("提交事件")
         event.preventDefault() // 阻止默认事件
       }
-
-
     </script>
-
   </body>
 </html>

@@ -29,11 +29,11 @@
     </div>
 
     <script>
+      // onmouseenter: 鼠标移到元素上（进入）不支持冒泡
+      // onmouseover: 鼠标移到某元素之上（over 在...上面） 支持冒泡
       var boxEl = document.querySelector(".box")
       var spanEl = document.querySelector("span")
 
-      // onmouseenter: 鼠标移到元素上（进入）不支持冒泡
-      // onmouseover: 鼠标移到某元素之上（over 在...上面） 支持冒泡
       boxEl.onmouseenter = function() {
         console.log("box onmouseenter")
       }
@@ -55,6 +55,5 @@
         console.log("box onmouseout")
       }
     </script>
-
   </body>
 </html>

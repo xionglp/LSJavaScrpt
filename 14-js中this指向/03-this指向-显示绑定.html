@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>显示绑定this</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /**
+       * call: 接收2个参数，第一个参数是this的指向，第二个参数是函数调用时需要传递的参数（可以是参数列表），原函数会立即指向一次
+       * apply: 接收2个参数， 第一个参数是this的指向， 第二个参数是函数接收的参数，以数组的形式传入，原函数会立即指向一次
+       * bind: 接收2个参数， 第一个参数是this的指向，第二个参数是参数列表的形式传递，不会立即执行，返回一个修改this指向之后的新函数
+       * 
+      */
+
+      /**
+       * 1、默认绑定（独立函数调用）优先级最低， 
+       * 2、显示绑定（call、apply、bind）优先级比隐式绑定（某个对象调用函数）高
+       * 3、new绑定优先级比隐式绑定（某个对象调用函数）高
+       * 4、new绑定优先级比bind高，new和call-apply 不能同时使用，不存在优先级
+      */
+
+
+    </script>
+  </body>
+</html>

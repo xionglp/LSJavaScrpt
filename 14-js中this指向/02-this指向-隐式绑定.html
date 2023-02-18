@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 隐式绑定，通过某个对象发起的函数调用
+      function foo() {
+        console.log("foo: ", this.name) // this -> obj1对象， this.name = obj1
+      }
+
+      var obj1 = {
+        name: "obj1",
+        foo: foo
+      }
+
+      var obj2 = {
+        name: "obj2",
+        obj1: obj1
+      }
+
+      obj2.obj1.foo()
+
+
+      // 题目二
+      function foo3() {
+        console.log("foo3: ", this) // this -> window
+      }
+
+      var obj3 = {
+        name: "obj3",
+        foo: foo3
+      }
+
+      var bar3 = obj3.foo
+      bar3()
+
+    </script>
+  </body>
+</html>

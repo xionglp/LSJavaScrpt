@@ -23,6 +23,16 @@
        * 4、new绑定优先级比bind高，new和call-apply 不能同时使用，不存在优先级
       */
 
+      var obj = {
+         name: "xionglp"
+      }
+
+      function foo() {
+        console.log("foo函数: ", this)
+      }
+
+      // 执行函数，并且函数中的this指向obj对象
+      foo.call(obj)
 
     </script>
   </body>

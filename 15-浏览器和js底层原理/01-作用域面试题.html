@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 函数的作用域和函数定义的位置有关， 跟函数调用的位置没有关系
+      // 如果在当前作用域没有找到，就会去上层作用域去查，直到查到全局作用域
+
+      // 面试题一:
+      var n = 100
+      function baz() {
+        n = 200
+      }
+      baz()
+
+      console.log(n) // 200
+
+      // 面试题二:
+      function aaa() {
+        console.log(m) // undefined
+        var m = 200
+        console.log(m) // 200
+      }
+
+      var m = 100
+      aaa()
+
+      console.log("------分割线------")
+
+      // 面试题三:
+      var s = 100
+      function bar1() {
+        console.log(s) // 100
+      }
+      function bar2() {
+        var s = 200
+        console.log(s) // 先 200
+        bar1()
+      }
+
+      bar2()
+      console.log(s) // 100
+
+      // 面试题四: 
+      var a = 100
+
+      function foo() {
+        console.log(a) // undefined
+        return
+        var a = 200
+      }
+
+      foo()
+      console.log("------分割线------")
+
+      // 面试题五: 
+      function ccc() {
+        var a = b = 100
+      }
+      ccc()
+      console.log(a) // 100
+      console.log(b) // 100
+
+
+    </script>
+  </body>
+</html>

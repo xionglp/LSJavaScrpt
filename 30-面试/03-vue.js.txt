@@ -1,0 +1,28 @@
+面试常考知识点:
+一、MVVM:
+ - Model-View-ViewModel: model代表模型，view代表视图，ViewModel是Model和View之间的桥梁。
+ - 数据绑定到ViewModel层并自动将数据渲染到页面中，视图变化的时候通知ViewModel层更新数据，数据驱动视图。
+
+二、Vue底层实现原理
+
+三、vue生命周期的理解
+
+四、nextTick的实现
+ - nextTick是Vue提供的一个全局的API，在下次DOM更新循环结束之后执行延迟回调
+ - 在修改数据之后，使用$nextTick，则可以在回调中获取更新后的DOM
+
+五、插槽
+
+六、keep-alive
+ - 实现组件缓存，保持组件状态，避免反复渲染导致的性能问题
+ - 原理: Vue.js内部将DOM节点，抽象成一个个的VNode节点，keep-alive组件的缓存也是基于VNode节点
+ - 它将满足条件的组件在cache对象中缓存起来，重新渲染的时候再将VNode节点从cache对象中取出并渲染。
+ - 设置属性: include(只有名称匹配的组件才会被缓存)，exclude（任何名称匹配的组件都不会缓存）
+
+ 七、vuex的理解和使用场景
+  - Vuex是一个专门为vue应用程序开发的状态管理工具，每一个Vuex应用的核心就是store仓库
+  - 1. State: 定义应用的状态数据
+  - 2. Getters: 类似计算属性，getter的返回值也会根据它的依赖缓存起来，且当它的依赖值发生改变才会重新计算
+  - 3. Mutation: 唯一更改store中状态的方法，且必须是同步函数
+  - 4. Action: 用于提交Mucation, 而不是直接更改状态, 可以包含任意异步操作
+  - 5. Module: 允许将单一的Store拆分成多个store, 且同时保存在单一的状态数中

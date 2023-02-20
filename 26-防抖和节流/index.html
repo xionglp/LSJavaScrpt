@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <button>按钮</button>
+    <input type="text">
+    <script src="./01-防抖函数实现.js"></script>
+    <script src="./02-节流函数实现.js"></script>
+
+    <script>
+      // 1.获取input元素
+      const inputEl = document.querySelector("input")
+  
+      // 2.调用自己实现的防抖
+      // let counter = 1
+      // inputEl.oninput = debounce(function() {
+      //   console.log(`发送网络请求${counter++}`)
+      // }, 2000)
+
+      // 2.调用自己实现的节流
+      let counter = 1
+      inputEl.oninput = throttle(function() {
+        console.log(`发送网络请求${counter++}`)
+      }, 1500)
+      
+    </script>
+
+  </body>
+</html>

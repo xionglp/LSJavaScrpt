@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 题目一:
+      /**
+       * 先执行同步函数， promise本身是同步函数，当executor执行到resolve或者reject，此时是异步操作
+       * 先执行then、catch等， 等主栈完成后，才会调用resolve、reject中存放的方法执行。
+       * promise.then 是微任务队列，先执行。 setTimeout是宏任务队列， 比微任务后执行。
+       * 
+      */
+
+      /*
+      console.log("script start")
+      let promise1 = new Promise(function(resolve) {
+        console.log("promise1")
+        resolve()
+        console.log("promise1 end")
+      }).then(function() {
+        console.log("promise2")
+      })
+
+      setTimeout(function() {
+        console.log("setTimeout")
+      })
+
+      console.log("script end")
+      console.log("------ 分割线 ------")
+      // script start -> promise1 -> promise1 end -> script end -> promise2 -> setTimeout
+      */
+
+      // 题目二:
+      /**
+       * async函数返回的是一个Promise
+       * 当函数执行的时候，一旦遇到await就会先返回
+       * 等到触发的异步操作完成，再执行函数体后面的语句
+      */
+
+      /*
+      async function async1() {
+        console.log("async1 start")
+        await async2()  
+        console.log("async1 end")
+      }
+
+      async function async2() {
+        console.log("async2")
+      }
+
+      console.log("script start")
+      async1()
+      console.log("script end")
+
+      // script start -> async1 start -> async2 -> script end -> async1 end
+      */
+
+    </script>
+  </body>
+</html>

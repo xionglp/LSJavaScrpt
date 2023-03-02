@@ -3,26 +3,88 @@
  - Model-View-ViewModel: model代表模型，view代表视图，ViewModel是Model和View之间的桥梁。
  - 数据绑定到ViewModel层并自动将数据渲染到页面中，视图变化的时候通知ViewModel层更新数据，数据驱动视图。
 
-二、Vue底层实现原理
+二、vue生命周期的理解
+Vue的生命周期可以分为8个阶段，创建前后、挂载前后、更新前后、销毁前后。
+ - beforeCreate、 created
+ - beforeMount、 Mounted
+ - beforeUpdate、 updated
+ - beforeUnmount、 unmounted
+父子组件的生命周期:
+ - 加载渲染阶段: 父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 
+   子 beforeMount -> 子 mounted -> 父 mounted (父组件先创建， 然后子组件再创建，挂载， 最后父组件挂载)
+ - 更新阶段: 父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated 
+ - 销毁阶段: 父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed (子组件先销毁，父组件再销毁)
 
-三、vue生命周期的理解
+三、nextTick的实现
+ - nextTick是Vue提供的一个全局的API，在下次DOM更新循环结束之后执行延迟回调。
+ - 在修改数据之后，使用$nextTick，则可以在回调中获取更新后的DOM。
+ 使用场景: 
+  - 如果想要在修改数据后立即得到更新后的DOM操作，可以使用Vue.$nextTick()
+  - 在created函数中执行DOM操作，可以使用Vue.$nextTick()
+Vue在更新DOM时是异步执行的。当数据发生变化时，Vue将开启一个异步更新队列，并缓冲在同一事件循环中发生的所有的数据变更。
+如果同一个Watcher被触发多次，只会被推入队列一次。nextTick方法会在队列中加入一个回调函数，确保该函数在前面的DOM操作完成之后才调用。
 
-四、nextTick的实现
- - nextTick是Vue提供的一个全局的API，在下次DOM更新循环结束之后执行延迟回调
- - 在修改数据之后，使用$nextTick，则可以在回调中获取更新后的DOM
+四、Vue实例挂载过程
+ - 挂载过程就是 app.mount()过程，这是一个初始化过程，主要做俩件事:初始化和建立更新机制。
+ - 初始化会创建组件实例、初始化组件状态、创建各种响应式数据。
+ - 建立更新机制这一步会立即执行一次组件的更新函数，这会首次执行组件渲染函数并执行patch将vnode转换成dom。
+ - 同时首次执行渲染函数会创建它内部的响应式数据和组件更新函数之间的依赖关系，使得以后数据发生改变会执行对应的更新函数。
 
-五、插槽
+五、Vue的模板编译原理
+Vue中有独特的编译器模块，称为Compiler，主要作用将用户编写的template编译成js可执行的render函数。 （template -> AST -> render）
+ - 在Vue中，编译器会先对template进行解析（parse），结束之后得到一个js对象，叫做AST抽象语法树。
+ - 然后对AST抽象语法树进行转化（transform），将AST转成js代码，也就是render函数。
 
-六、keep-alive
+六、Vue的响应式原理
+ - Vue2 Object.defineProperty(obj, key, descriptor)拦截对象属性访问，劫持各个属性的setter、getter。
+   在数据发生改变时，发布消息给订阅者，触发相应的监听回调。
+ - 如果是数组，通过覆盖数组原型的方法， 扩展它的7个变更方法(push, pop, shift, unshift, splice, sort, reverse),
+   使这些方法可以额外的做更新通知
+ - Vue3 利用Proxy API 代理整个对象。可以同时支持对象、数组、动态属性新增、删除，对象嵌套属性运行时递归调用。
+
+七、虚拟DOM
+
+八、diff算法
+
+九、Vue中key的作用
+
+十、为什么组件中的data选项是一个函数
+目的是为了多个组件实例对象共用一个data，产生数据污染。而采用函数的形式，每一个都会返回一个全新的对象。
+
+十一、Vue组件间的通讯方式
+ - 父子组件通信: 父 -> 子 通过props，子向父 通过$emit发出一个事件，或者通过$parent/$children, ref也能访问组件的实例。
+ - 兄弟组件通信: 事件总线EventBus, vuex
+ - 夸层架组件通信: EventBus, Vuex, provide/inject
+
+十二、插槽
+slot插槽，封装组件时，在组件内不确定该位置是以何种形式的元素展示，可以通过slot插槽占据该位置，该位置的元素需要父组件以内容的形式传过来。
+ - 默认插槽: 子组件用<slot>标签来确定渲染的位置，当父组件在使用的时候，可以直接在子组件的标签内写入内容，
+   该部分内容将插入子组件的<slot>标签位置。
+ - 具名插槽: 子组件用name属性来表示插槽的名字，没有指定name的插槽，会有隐含的名称叫做default。
+ - 作用域插槽: 子组件在<slot>标签上绑定props数据，以将子组件的数据传递给父组件使用。
+
+十三、SPA的理解
+
+十四、双向绑定
+
+十五、Vue Router模式
+
+
+十六、keep-alive
  - 实现组件缓存，保持组件状态，避免反复渲染导致的性能问题
  - 原理: Vue.js内部将DOM节点，抽象成一个个的VNode节点，keep-alive组件的缓存也是基于VNode节点
  - 它将满足条件的组件在cache对象中缓存起来，重新渲染的时候再将VNode节点从cache对象中取出并渲染。
  - 设置属性: include(只有名称匹配的组件才会被缓存)，exclude（任何名称匹配的组件都不会缓存）
 
- 七、vuex的理解和使用场景
-  - Vuex是一个专门为vue应用程序开发的状态管理工具，每一个Vuex应用的核心就是store仓库
-  - 1. State: 定义应用的状态数据
-  - 2. Getters: 类似计算属性，getter的返回值也会根据它的依赖缓存起来，且当它的依赖值发生改变才会重新计算
-  - 3. Mutation: 唯一更改store中状态的方法，且必须是同步函数
-  - 4. Action: 用于提交Mucation, 而不是直接更改状态, 可以包含任意异步操作
-  - 5. Module: 允许将单一的Store拆分成多个store, 且同时保存在单一的状态数中
+十七、vuex的理解和使用场景
+ - Vuex是一个专门为vue应用程序开发的状态管理工具，每一个Vuex应用的核心就是store仓库
+ - State: 定义应用的状态数据
+ - Getters: 类似计算属性，getter的返回值也会根据它的依赖缓存起来，且当它的依赖值发生改变才会重新计算
+ - Mutation: 唯一更改store中状态的方法，且必须是同步函数
+ - Action: 用于提交Mucation, 而不是直接更改状态, 可以包含任意异步操作
+ - Module: 允许将单一的Store拆分成多个store, 且同时保存在单一的状态数中
+ 备注: 页面刷新后vuex状态丢失怎么办
+
+十八、Vue SSR的理解
+
+

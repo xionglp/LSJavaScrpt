@@ -2,7 +2,6 @@
 问题一: 性能优化，webpack做过哪些优化?
  - 通过配置webpack 做过哪些优化
  
-
 对webpack的理解
  - webpack是用于现代JavaScript应用程序的静态模块打包工具。我们可以使用webpack管理模块。因为在webpack看来，项目中所有的资源皆为模块，通过分析模块间的依赖关系，在其内部构建出一个依赖图，最终编译输出模块为HTML、JavaScript、CSS以及各种静态文件（图片、字体等），让我们的开发过程更加高效。
 
@@ -44,7 +43,7 @@ webpack的作用主要如下:
    css压缩: css压缩通常是去除无用的空格，css-minimizer-webpack-plugin。
    HTML压缩: HtmlWebpackPlugin插件生成HTML模版的时候，通过配置minify进行html优化。
  - 图片压缩: image-webpack-loader
- - Tree Shaking: 在计算机中表示消除死代码，依赖ESModule的静态语法分析（不执行任何的代码，可以明确的知道模块的依赖关系）
+ - Tree Shaking: 消除无用的js代码，依赖ESModule的静态语法分析（不执行任何的代码，可以明确的知道模块的依赖关系）
    1. usedExports: 通过标记某些函数是否被使用，之后通过Terser来进行优化的。 使用之后，没有用上的代码在webpack打包中会加入unused注释，用来告诉Terser在做优化时，可以删除这段代码。
    2. sideEffects: 跳过整个模块或者文件，查看该文件是否有副作用。如果sideEffects设置为false，就是告知webpack可以安全的删除未用到的exports
  - 缩小打包域: 排除webpack不需要解析的模块，借助include和exclude俩个参数，规定loader只在哪些模块应用和只在哪些模块不应用。

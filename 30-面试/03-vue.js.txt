@@ -84,7 +84,21 @@ slot插槽，封装组件时，在组件内不确定该位置是以何种形式�
  - Action: 用于提交Mucation, 而不是直接更改状态, 可以包含任意异步操作
  - Module: 允许将单一的Store拆分成多个store, 且同时保存在单一的状态数中
  备注: 页面刷新后vuex状态丢失怎么办
+  - 提交mutation的时候同时存入localStorage，也可以使用第三方的插件vuex-persist
+  - vuex-persist 它是为vuex持久化而生的一个插件，不需要手动storage，会直接将状态保存至cookie或者storage中。
 
 十八、Vue SSR的理解
+ - 服务端渲染，就是将vue在客户端把标签渲染成html的工作放在服务端完成，然后再把html返回给客户端直接展示。
+ 优点: 有更好的SEO，首屏加载速度更快。
+ 缺点: 开发条件受限制，服务端渲染只支持beforeCreate和created俩个钩子，当我们需要一些外部扩展库时需要特殊处理。
+
+
+ 虚拟列表
+
+ 图片懒加载
+
+
+
+--- 晚上把这个补齐， 白天投递简历和多看几遍面试题 ---
 
 

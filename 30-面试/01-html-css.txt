@@ -86,3 +86,8 @@ flex布局是一种弹性盒子布局
 先设置图片的 data-set 属性值为图片路径，由于不是 src 属性，故不会发生 http 请求。
 然后计算出页面的 scrollTop 的高度和浏览器的高度之和，如果图片距页面顶端距离小于前两者之和，说明图片要显示出来了，
 这时将 data-set 属性替换为 src 属性即可
+
+十二、vw、vh
+ - vw和vh是css3新单位，即view width可视窗口的宽度和view height可视窗口的高度
+ - 1vw = 可视宽度的1%
+ - 实际项目开发中使用postcss-px-to-viewport 插件对px 转成vw 和 vh。

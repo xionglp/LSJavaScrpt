@@ -84,11 +84,7 @@
  - defer script: 也是异步下载脚本，如果此时HTML还没有解析完成，浏览器不会暂停解析去执行脚本，而是等HTML解析完毕再执行js代码。
    如果存在多个defer script标签，浏览器会保证它们按照在HTML中出现的顺序执行，不会破坏JS脚本之间的依赖关系。 
 
-十四、Array.from() 和 Array.of() 用法和区别
-  - Array.from() 将伪数组对象或可遍历对象转成真数组。接收三个参数: input,map,context。
-  input: 待转换的伪数组对象或可遍历对象, map: 类似于数组的 map 方法，用来对每个元素进行处理，将处理后的值放入返回的数组,
-  context：绑定map中用到的 this.
-  - Array.of() 将一系列值转换为数组，会创建一个包含所有参数的数组。
+十八、preload和prefetch的区别
 
 十五、new操作符的实现机制
  - 首先创建一个新的空对象
@@ -111,6 +107,18 @@ js是单线程运行的，当遇到一个异步事件后并不会一直等待其
  - 状态的改变是通过resolve()和reject()来实现的。
  - Promise的原型上定义了一个then方法，使用这个then方法可以为两个状态的改变注册回调函数。这个回调函数属于微任务。
 
-十八、preload和prefetch的区别
+十四、ES6数组新增了哪些扩展
+  扩展运算符 console.log(...[1, 2, 3])
+  1、Array.from() 和 Array.of() 用法和区别
+    - Array.from() 将伪数组对象或可遍历对象转成真数组。接收三个参数: input, map, context。
+    input: 待转换的伪数组对象或可遍历对象, map: 类似于数组的 map 方法，用来对每个元素进行处理，将处理后的值放入返回的数组,
+    context：绑定map中用到的 this
+    - Array.of() 将一系列值转换为数组，会创建一个包含所有参数的数组。
+  
+  2、find() findIndex()
+  3、fill() 使用给定值，填充数组
+  4、includes 用于判断数组是否包含给定的值
+  5、flat(), 将数组扁平化处理，返回一个新的数组，对原数据没有影响。 
+    flatMap(), 相当于对原数组的每个成员执行一次Array.prototype.map()
+  
 
-十九、数组的相关操作

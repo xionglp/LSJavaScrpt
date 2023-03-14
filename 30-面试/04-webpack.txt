@@ -1,7 +1,4 @@
-
-问题一: 性能优化，webpack做过哪些优化?
- - 通过配置webpack 做过哪些优化
- 
+Webpack
 对webpack的理解
  - webpack是用于现代JavaScript应用程序的静态模块打包工具。我们可以使用webpack管理模块。
    因为在webpack看来，项目中所有的资源皆为模块，通过分析模块间的依赖关系，在其内部构建出一个依赖图，
